@@ -1,6 +1,4 @@
-/* File Handling with C++ using ifstream & ofstream class object */
-/* To write the content in File */
-/* Then to read the content of file */
+
 
 #include <iostream>
 #include <fstream>
@@ -9,7 +7,7 @@ using namespace std;
 
 int main()
 {
-    // Writing content into file
+   
     ofstream fout("sample.txt");
 
     fout << "Hello World!" << endl;
@@ -20,7 +18,7 @@ int main()
 
     cout << "Data written successfully!" << endl;
 
-    // Reading content from file
+  
     ifstream fin("sample.txt");
     string line;
 
