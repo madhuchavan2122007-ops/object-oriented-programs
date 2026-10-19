@@ -1,43 +1,37 @@
+/* File Handling with C++ using ifstream & ofstream class object */
+/* To write the content in File */
+/* Then to read the content of file */
+
 #include <iostream>
 #include <fstream>
 #include <string>
 using namespace std;
 
-int main() {
-    string data;
+int main()
+{
+    // Writing content into file
+    ofstream fout("sample.txt");
 
-    // Write data to a file
-    ofstream outfile("data.txt");
+    fout << "Hello World!" << endl;
+    fout << "Welcome to C++ File Handling." << endl;
+    fout << "This is a file handling program.";
 
-    if (!outfile) {
-        cout << "Error opening file for writing!" << endl;
-        return 1;
-    }
+    fout.close();
 
-    cout << "Enter some data: ";
-    getline(cin, data);
+    cout << "Data written successfully!" << endl;
 
-    outfile << data;
-    outfile.close();
-
-    cout << "Data written to file successfully." << endl;
-
-    // Read data from the file
-    ifstream infile("data.txt");
-
-    if (!infile) {
-        cout << "Error opening file for reading!" << endl;
-        return 1;
-    }
-
-    cout << "\nData read from file: " << endl;
-
+    // Reading content from file
+    ifstream fin("sample.txt");
     string line;
-    while (getline(infile, line)) {
+
+    cout << "\nContent of File:" << endl;
+
+    while (getline(fin, line))
+    {
         cout << line << endl;
     }
 
-    infile.close();
+    fin.close();
 
     return 0;
 }
